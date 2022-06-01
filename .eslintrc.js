@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   extends: ['airbnb', 'prettier'],
-  plugins: ['prettier', 'react-hooks'],
+  plugins: ['prettier', 'react-hooks', 'jest', 'jest-dom'],
   rules: {
     'prettier/prettier': 'error',
     'react-hooks/rules-of-hooks': 'error',
@@ -14,8 +14,26 @@ module.exports = {
       { extensions: ['.tsx', '.jsx', 'spec.js'] },
     ],
     'react/function-component-definition': 'off',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        mjs: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
   },
   overrides: [
+    {
+      files: ['**/*.spec.ts?(x)'],
+      rules: {
+        '@typescript-eslint/unbound-method': 'off',
+        'jest/unbound-method': 'error',
+      },
+    },
     {
       files: ['**/*.ts?(x)'],
       parser: '@typescript-eslint/parser',
@@ -71,5 +89,6 @@ module.exports = {
   },
   env: {
     browser: true,
+    'jest/globals': true,
   },
 };
