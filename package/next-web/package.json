@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run -b chrome",
     "cy:test": "start-server-and-test 'yarn dev' http://localhost:3000 'yarn cy:run'"
   },
   "dependencies": {
