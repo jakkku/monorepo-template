@@ -25,8 +25,29 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '**/*.stories.tsx',
+          '**/*.@(spec|test).@(js|ts)?(x)',
+          '**/testUtils.tsx',
+          '**/jest.setup.ts',
+          '**/.storybook/*.@(js|ts)?(x)',
+          '**/webpack.*.js',
+          '**/script/*.js',
+          '**/mocks/**/*.@(js|ts)?(x)',
+          '**/cypress.config.js',
+        ],
+      },
+    ],
   },
   overrides: [
+    {
+      extends: ['plugin:cypress/recommended'],
+      files: ['**/cypress/**/*.ts'],
+      rules: {},
+    },
     {
       files: ['**/*.spec.ts?(x)'],
       rules: {

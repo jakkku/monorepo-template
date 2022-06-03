@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "cy:run": "cypress run",
+    "cy:test": "start-server-and-test 'yarn dev' http://localhost:3000 'yarn cy:run'"
   },
   "dependencies": {
     "next": "12.1.6",
@@ -21,10 +23,12 @@
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.5",
     "@types/testing-library__jest-dom": "^5",
+    "cypress": "^10.0.2",
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
+    "start-server-and-test": "^1.14.0",
     "typescript": "4.7.2"
   }
 }
