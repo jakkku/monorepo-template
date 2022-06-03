@@ -13,12 +13,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: yarn -v
-      - run: yarn set version berry
-      - run: yarn -v
 
       - name: Install dependencies
-        run: yarn install --immutable --immutable-cache
+        run: yarn install
 
       - name: Check Lint
         run: yarn lint
