@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [master, develop]
+
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Check Lint
+        run: yarn lint
+
+      - name: Check Unit Test
+        run: yarn test:all
+
+      - name: Check E2E Test
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          command: yarn test:all --browser chrome
