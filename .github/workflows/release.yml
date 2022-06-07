@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    paths:
+      - '.changeset/**'
+      - 'package/**'
+    branches:
+      - master
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Build packages
+        run: yarn build:packages
+
+      - name: Create release Pull request
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          version: yarn changeset version
+          publish: yarn release
+          commit: 'chore(release): version packages'
+          title: 'chore(release): version packages'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -14,5 +14,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true
-  }
+  },
+  "exclude": ["package/**/tests/**", "package/**/dist/**"]
 }

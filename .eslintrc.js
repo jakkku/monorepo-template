@@ -78,7 +78,7 @@ module.exports = {
         '@typescript-eslint/no-unsafe-call': 'off',
       },
       parserOptions: {
-        project: ['./tsconfig.base.json', './package/**/tsconfig.json'],
+        project: ['./tsconfig.json', './package/**/tsconfig.json'],
       },
     },
     {

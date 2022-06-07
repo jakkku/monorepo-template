@@ -10,6 +10,8 @@
     "lint": "eslint ./package --ext .ts,.tsx,.js,.jsx --cache",
     "next-web": "yarn workspace next-web",
     "commit": "cz",
+    "build:packages": "yarn workspaces foreach run build",
+    "release": "changeset publish",
     "postinstall": "husky install",
     "test:all": "yarn workspaces foreach --parallel run test",
     "cy:all": "yarn workspaces foreach --parallel --include next-web run cy:test"
@@ -48,5 +50,8 @@
     "cz-conventional-changelog@3.3.0": {
       "unplugged": true
     }
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.22.0"
   }
 }
