@@ -1,4 +1,4 @@
-name: Release
+name: Tag
 
 on:
   push:
@@ -9,8 +9,8 @@ on:
       - master
 
 jobs:
-  release:
-    name: Release
+  tag:
+    name: Tag
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -29,13 +29,13 @@ jobs:
       - name: Build packages
         run: yarn build:packages
 
-      - name: Create release Pull request
+      - name: Create release Pull request or Tag
         id: changesets
         uses: changesets/action@v1
         with:
           version: yarn changeset version
-          publish: yarn release
-          commit: 'chore(release): version packages'
-          title: 'chore(release): version packages'
+          publish: yarn tag
+          commit: 'chore(tag): version packages'
+          title: 'chore(tag): version packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
