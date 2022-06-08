@@ -1,11 +1,5 @@
 # next-web
 
-## 0.2.1
-
-### Patch Changes
-
-- 9b02959: test tagging with changesets
-
 ## 0.2.0
 
 ### Minor Changes
