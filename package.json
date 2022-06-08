@@ -11,7 +11,7 @@
     "next-web": "yarn workspace next-web",
     "commit": "cz",
     "build:packages": "yarn workspaces foreach run build",
-    "release": "changeset publish",
+    "tag": "changeset tag",
     "postinstall": "husky install",
     "test:all": "yarn workspaces foreach --parallel run test",
     "cy:all": "yarn workspaces foreach --parallel --include next-web run cy:test"
