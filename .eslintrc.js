@@ -82,12 +82,15 @@ module.exports = {
       },
     },
     {
-      files: ['packages/next-web/**/*.ts?(x)', 'packages/next-web/**/*.js?(x)'],
+      files: [
+        'package/next-web/src/**/*.ts?(x)',
+        'package/next-web/src/**/*.js?(x)',
+      ],
       settings: {
         'import/resolver': {
           typescript: {
             project: path.resolve(
-              `${__dirname}/packages/next-web/tsconfig.json`
+              `${__dirname}/package/next-web/tsconfig.json`
             ),
           },
         },
