@@ -1,3 +1,3 @@
 # monorepo-template
-with yarn berry workspace
 
+with yarn berry workspace
