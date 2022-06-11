@@ -96,6 +96,21 @@ module.exports = {
         },
       },
     },
+    {
+      files: [
+        'package/common-components/src/**/*.ts?(x)',
+        'package/common-components/src/**/*.js?(x)',
+      ],
+      settings: {
+        'import/resolver': {
+          typescript: {
+            project: path.resolve(
+              `${__dirname}/package/common-components/tsconfig.json`
+            ),
+          },
+        },
+      },
+    },
   ],
   settings: {
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx', 'spec.js'],

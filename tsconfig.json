@@ -15,5 +15,10 @@
     "jsx": "preserve",
     "incremental": true
   },
+  "references": [
+    {
+      "path": "package/common-components"
+    }
+  ],
   "exclude": ["package/**/tests/**", "package/**/dist/**"]
 }

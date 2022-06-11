@@ -12,6 +12,7 @@
     "cy:test": "start-server-and-test 'yarn dev' http://localhost:3000 'yarn cy:run'"
   },
   "dependencies": {
+    "@common/components": "workspace:*",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0"
