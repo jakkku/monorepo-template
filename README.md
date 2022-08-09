@@ -74,6 +74,7 @@ package폴더로 이동하여 Next.js 프로젝트를 생성한다.
 ```
 
 root의 package.json에 script를 추가하여, root경로에서 패키지의 script를 실행시킬 수 있다.  
+예를 들어, `next-web` package의 `dev` script를 실행하고 싶다면, `yarn next-web dev`로 실행시킬 수 있다.
 <br>
 
 ## ✨ Typescript 설정하기
